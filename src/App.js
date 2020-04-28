@@ -1,5 +1,5 @@
 import React, { useContext, useReducer, useState } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { Sidebar, Menu, Icon, Segment } from "semantic-ui-react";
 import ReactGA from "react-ga";
 import { createBrowserHistory } from "history";
@@ -38,17 +38,23 @@ const Root = () => {
           visible={visible}
           width="thin"
         >
-          <Menu.Item as="a" href="/">
-            <Icon name="home" />
-            Αρχική
+          <Menu.Item>
+            <Link to="/">
+              <Icon name="home" />
+              Αρχική
+            </Link>
           </Menu.Item>
-          <Menu.Item as="a" href="/stats">
-            <Icon name="table" />
-            Στατιστικά
+          <Menu.Item>
+            <Link to="/stats">
+              <Icon name="table" />
+              Στατιστικά
+            </Link>
           </Menu.Item>
-          <Menu.Item as="a" href="/daily">
-            <Icon name="chart line" />
-            Χάρτες
+          <Menu.Item>
+            <Link to="/daily">
+              <Icon name="chart line" />
+              Χάρτες
+            </Link>
           </Menu.Item>
         </Sidebar>
         <Sidebar.Pusher>
